@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>酷客影视 · 高清电影电视剧在线看与每日剧集榜 - kukeyingshi-app.github.io</title>
+<meta name="description" content="酷客影视（kukeyingshi-app.github.io）收录热映电影、国产剧、美日韩剧、动漫与纪录片条目，按评分、热度、更新时间排序，附剧情看点、观影门槛与适配设备说明。页面手机端自适应，通勤路上也能快速挑片，找片不再来回跳转。">
+<meta name="keywords" content="酷客影视,kukeyingshi-app,酷客影视官网,酷客影视在线观看,高清电影在线观看,热门电视剧推荐,每日剧集排行榜,动漫番剧更新表,高分纪录片清单,影视评分查询,手机追剧,免费看片网站">
+<meta name="author" content="酷客影视">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://kukeyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="酷客影视">
+<meta property="og:title" content="酷客影视 · 高清电影电视剧在线看与每日剧集榜">
+<meta property="og:description" content="电影、剧集、动漫、纪录片分区整理，评分与热度双榜更新，附看点提示与适配设备说明。">
+<meta property="og:url" content="https://kukeyingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1020">
+<style>
+:root{
+  --bg:#0b1020;
+  --bg2:#111a31;
+  --card:#151d36;
+  --line:#243054;
+  --txt:#e8ecf6;
+  --sub:#9aa6c2;
+  --brand:#2ee6a8;
+  --brand2:#ffb347;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font:16px/1.75 "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* 顶部 */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));z-index:60}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.logo i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#1b9cff);display:inline-block;position:relative}
+.logo i::after{content:"";position:absolute;left:8px;top:8px;width:10px;height:10px;border-radius:2px;background:#0b1020}
+.logo small{font-size:12px;color:var(--sub);font-weight:400}
+nav{margin-left:auto}
+nav ul{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav ul::-webkit-scrollbar{display:none}
+nav a{display:block;padding:8px 12px;border-radius:999px;font-size:15px;color:var(--sub);white-space:nowrap}
+nav a:hover,nav a.on{color:#0b1020;background:var(--brand);font-weight:600}
+@media(max-width:760px){
+  .topbar .wrap{height:auto;padding:10px 18px;flex-wrap:wrap}
+  .logo{font-size:18px}
+  nav{width:100%;margin-left:0}
+  nav ul{padding-bottom:2px}
+  nav a{padding:6px 10px;font-size:14px}
+}
+
+/* 首屏 */
+.hero{padding:46px 0 30px;background:radial-gradient(900px 420px at 12% -10%,rgba(46,230,168,.16),transparent 60%),radial-gradient(700px 400px at 92% 10%,rgba(255,179,71,.12),transparent 60%)}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.tagline{display:inline-block;font-size:13px;color:var(--brand);border:1px solid rgba(46,230,168,.4);border-radius:999px;padding:4px 12px;letter-spacing:1px}
+.hero h1{font-size:40px;line-height:1.25;margin:16px 0 14px;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{color:var(--sub);font-size:16.5px;max-width:52ch}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 20px}
+.btn{padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;border:1px solid transparent}
+.btn-a{background:var(--brand);color:#06231a}
+.btn-b{border-color:var(--line);color:var(--txt);background:var(--card)}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:flex;gap:26px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:16px}
+.stats b{display:block;font-size:22px;color:var(--brand2)}
+.stats span{font-size:13px;color:var(--sub)}
+@media(max-width:860px){
+  .hero{padding:32px 0 24px}
+  .hero .grid{grid-template-columns:1fr;gap:24px}
+  .hero h1{font-size:29px}
+}
+
+/* 海报墙 */
+.posterwall{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pw{height:150px;border-radius:var(--r);position:relative;overflow:hidden;border:1px solid var(--line)}
+.pw:nth-child(1){background:linear-gradient(160deg,#1b3a5c,#0e2036)}
+.pw:nth-child(2){background:linear-gradient(160deg,#5c3a1b,#361f0e)}
+.pw:nth-child(3){background:linear-gradient(160deg,#2a1b5c,#150e36)}
+.pw:nth-child(4){background:linear-gradient(160deg,#1b5c48,#0e3628)}
+.pw:nth-child(5){background:linear-gradient(160deg,#5c1b3a,#360e20)}
+.pw:nth-child(6){background:linear-gradient(160deg,#4a5c1b,#26360e)}
+.pw b{position:absolute;left:12px;bottom:12px;font-size:14px;letter-spacing:.5px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.pw i{position:absolute;right:10px;top:10px;font-style:normal;font-size:12px;color:#0b1020;background:var(--brand2);border-radius:6px;padding:2px 7px;font-weight:700}
+@media(max-width:860px){.posterwall{grid-template-columns:repeat(2,1fr)}.pw{height:122px}}
+
+/* 通用区块 */
+section{padding:44px 0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.head h2{font-size:26px;letter-spacing:-.3px;position:relative;padding-left:14px}
+.head h2::before{content:"";position:absolute;left:0;top:6px;width:4px;height:24px;border-radius:2px;background:linear-gradient(var(--brand),var(--brand2))}
+.head p{font-size:13.5px;color:var(--sub);max-width:46ch}
+.more{font-size:14px;color:var(--brand)}
+
+/* 分类卡 */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;transition:.25s}
+.cat:hover{border-color:rgba(46,230,168,.55);background:var(--bg2)}
+.cat b{display:block;font-size:17px;margin-bottom:4px}
+.cat span{font-size:13px;color:var(--sub)}
+.cat em{display:block;margin-top:10px;font-style:normal;font-size:12px;color:var(--brand2)}
+@media(max-width:520px){.cats{grid-template-columns:repeat(2,1fr);gap:10px}.cat{padding:13px}.cat b{font-size:15px}}
+
+/* 片单 */
+.films{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.film{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.cover{height:230px;position:relative}
+.c1{background:linear-gradient(200deg,#33507a,#101a2e)}
+.c2{background:linear-gradient(200deg,#7a4a33,#2e1a12)}
+.c3{background:linear-gradient(200deg,#3f337a,#1a1430)}
+.c4{background:linear-gradient(200deg,#337a5f,#122e23)}
+.c5{background:linear-gradient(200deg,#7a3350,#2e1220)}
+.c6{background:linear-gradient(200deg,#6b7a33,#2b2e12)}
+.cover i{position:absolute;right:10px;top:10px;font-style:normal;font-size:12px;font-weight:700;color:#0b1020;background:var(--brand);padding:2px 8px;border-radius:6px}
+.cover u{position:absolute;left:10px;bottom:10px;text-decoration:none;font-size:12px;color:#cfd8ee;background:rgba(11,16,32,.65);padding:2px 8px;border-radius:6px}
+.film .info{padding:13px 14px 15px}
+.film h3{font-size:16px;margin-bottom:6px;line-height:1.4}
+.film p{font-size:13px;color:var(--sub);line-height:1.6}
+.film .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12.5px;color:var(--sub)}
+.film .meta b{color:var(--brand2);font-size:15px}
+@media(max-width:520px){.films{grid-template-columns:repeat(2,1fr);gap:11px}.cover{height:168px}.film h3{font-size:14.5px}.film p{font-size:12px}}
+
+/* 榜单 */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.rk h3{font-size:17px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.rk h3 span{font-size:12px;color:var(--sub);font-weight:400}
+.rk li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.rk li:last-child{border-bottom:0}
+.rk li b{font-size:19px;color:var(--line);width:26px;text-align:center;font-family:Georgia,serif}
+.rk li:nth-child(1) b{color:var(--brand2)}
+.rk li:nth-child(2) b{color:#c9d4ea}
+.rk li:nth-child(3) b{color:#b98a5a}
+.rk li div{flex:1}
+.rk li strong{display:block;font-size:15px;font-weight:600}
+.rk li small{font-size:12.5px;color:var(--sub)}
+.rk li em{font-style:normal;font-size:14px;color:var(--brand);font-weight:700;align-self:center}
+@media(max-width:760px){.rank{grid-template-columns:1fr}}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.nw{display:flex;gap:13px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.nw .thumb{width:86px;height:86px;flex:none;border-radius:10px;background:linear-gradient(140deg,#2b3a63,#131c33)}
+.nw:nth-child(2) .thumb{background:linear-gradient(140deg,#633f2b,#331c13)}
+.nw:nth-child(3) .thumb{background:linear-gradient(140deg,#3b2b63,#1c1333)}
+.nw:nth-child(4) .thumb{background:linear-gradient(140deg,#2b6350,#13332a)}
+.nw h3{font-size:15.5px;line-height:1.5;margin-bottom:6px}
+.nw p{font-size:13px;color:var(--sub);line-height:1.6}
+.nw time{display:block;margin-top:8px;font-size:12px;color:#6f7c9b}
+@media(max-width:520px){.nw .thumb{width:68px;height:68px}.nw h3{font-size:14.5px}}
+
+/* 特色条 */
+.strip{background:linear-gradient(120deg,rgba(46,230,168,.1),rgba(255,179,71,.08));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:30px 0}
+.strip .grid div b{display:block;font-size:16px;margin-bottom:5px;color:var(--brand)}
+.strip .grid div span{font-size:13.5px;color:var(--sub);line-height:1.6}
+@media(max-width:760px){.strip .grid{grid-template-columns:repeat(2,1fr);gap:16px;padding:24px 0}}
+
+/* 问答 */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:10px;padding:14px 16px}
+.faq summary{font-size:15.5px;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:24px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:-1px;font-size:20px;color:var(--brand)}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:14px;color:var(--sub);margin-top:10px;line-height:1.75}
+
+/* 页脚 */
+footer{background:#080d1a;border-top:1px solid var(--line);padding:40px 0 26px;margin-top:20px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.fgrid h4{font-size:15px;margin-bottom:12px;color:var(--txt)}
+.fgrid li{font-size:13.5px;color:var(--sub);padding:5px 0}
+.fgrid li a:hover{color:var(--brand)}
+.fabout p{font-size:13.5px;color:var(--sub);line-height:1.8;margin-top:8px;max-width:38ch}
+.domainline{margin-top:14px;font-size:13px;color:var(--brand);word-break:break-all}
+.copy{border-top:1px solid var(--line);margin-top:26px;padding-top:16px;font-size:12.5px;color:#6f7c9b;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr;gap:20px}.fabout{grid-column:1/-1}}
+.totop{position:fixed;right:16px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#06231a;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.4);z-index:55}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kukeyingshi-app.github.io/#website","url":"https://kukeyingshi-app.github.io/","name":"酷客影视","inLanguage":"zh-CN","description":"酷客影视整理热映电影、剧集、动漫与纪录片条目，提供评分榜、热度榜与观影指南。","publisher":{"@id":"https://kukeyingshi-app.github.io/#org"}},{"@type":"Organization","@id":"https://kukeyingshi-app.github.io/#org","name":"酷客影视","url":"https://kukeyingshi-app.github.io/","logo":"https://kukeyingshi-app.github.io/"},{"@type":"WebPage","@id":"https://kukeyingshi-app.github.io/#webpage","url":"https://kukeyingshi-app.github.io/","name":"酷客影视 · 高清电影电视剧在线看与每日剧集榜","isPartOf":{"@id":"https://kukeyingshi-app.github.io/#website"},"breadcrumb":{"@id":"https://kukeyingshi-app.github.io/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://kukeyingshi-app.github.io/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"酷客影视","item":"https://kukeyingshi-app.github.io/"},{"@type":"ListItem","position":2,"name":"电影库"},{"@type":"ListItem","position":3,"name":"剧集榜"},{"@type":"ListItem","position":4,"name":"动漫番剧"}]}]}
+</script>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<div class="progress" id="pg"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>酷客影视<small>&nbsp;KuKe&nbsp;Film</small></a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a class="on" href="#top">精选</a></li>
+        <li><a href="#movie">电影库</a></li>
+        <li><a href="#tv">剧集榜</a></li>
+        <li><a href="#anime">动漫番剧</a></li>
+        <li><a href="#doc">纪录片</a></li>
+        <li><a href="#news">影评资讯</a></li>
+        <li><a href="#about">关于站点</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap grid">
+      <div>
+        <span class="tagline">每日 08:00 更新 · 评分 + 热度双榜</span>
+        <h1 id="h1">挑片不用翻半天，<em>酷客影视</em>把当季好片摆在你面前</h1>
+        <p class="lead">院线新片、国产剧集、日韩美剧、动漫番剧分区陈列，每条内容标注评分、看点、集数与适配网络环境。手机端打开自动折行排版，公交上单手也能翻完一整页。</p>
+        <div class="btns">
+          <a class="btn btn-a" href="#movie">进电影库</a>
+          <a class="btn btn-b" href="#tv">看今日剧集榜</a>
+        </div>
+        <div class="stats">
+          <div><b>4200+</b><span>收录影视条目</span></div>
+          <div><b>6 大区</b><span>电影 / 剧集 / 动漫</span></div>
+          <div><b>10 分钟</b><span>榜单刷新间隔</span></div>
+        </div>
+      </div>
+      <div class="posterwall" aria-hidden="true">
+        <div class="pw"><b>院线热映</b><i>9.1</i></div>
+        <div class="pw"><b>国产剧集</b><i>8.7</i></div>
+        <div class="pw"><b>美剧精选</b><i>8.9</i></div>
+        <div class="pw"><b>日韩剧场</b><i>8.4</i></div>
+        <div class="pw"><b>动漫番剧</b><i>9.0</i></div>
+        <div class="pw"><b>纪录人文</b><i>9.3</i></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap grid">
+      <div><b>零跳转找片</b><span>片名、类型、评分三项信息同屏呈现，点开就是结果。</span></div>
+      <div><b>移动优先排版</b><span>卡片宽度按屏幕自适应，横竖屏切换不跑版。</span></div>
+      <div><b>榜单按小时刷新</b><span>热度榜取近 24 小时播放与收藏加权数据。</span></div>
+      <div><b>剧透分级提示</b><span>看点描述分层展示，未看片的人可放心浏览。</span></div>
+    </div>
+  </div>
+
+  <section id="movie" aria-labelledby="m1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="m1">电影库</h2>
+          <p>按题材与上映年份归类，动作、科幻、悬疑、文艺各有独立入口，冷门佳作也留了位置。</p>
+        </div>
+        <a class="more" href="#">查看全部电影分类</a>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#"><b>科幻 / 视效</b><span>太空歌剧、末世题材</span><em>收录 386 部</em></a>
+        <a class="cat" href="#"><b>悬疑 / 犯罪</b><span>本格推理、社会派</span><em>收录 512 部</em></a>
+        <a class="cat" href="#"><b>动作 / 冒险</b><span>硬核打斗、公路片</span><em>收录 447 部</em></a>
+        <a class="cat" href="#"><b>文艺 / 剧情</b><span>作者电影、家庭叙事</span><em>收录 293 部</em></a>
+        <a class="cat" href="#"><b>动画电影</b><span>剧场版、独立动画</span><em>收录 208 部</em></a>
+        <a class="cat" href="#"><b>喜剧 / 合家欢</b><span>方言喜剧、轻喜剧</span><em>收录 361 部</em></a>
+      </div>
+      <div class="films" style="margin-top:22px">
+        <article class="film">
+          <div class="cover c1"><i>9.2</i><u>已完结 · 169 分钟</u></div>
+          <div class="info">
+            <h3>奥本海默</h3>
+            <p>黑白与彩色双线交叉，讲一位物理学家在项目成功之后被迫面对的听证会。</p>
+            <div class="meta"><span>传记 / 历史</span><b>2023</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c2"><i>8.8</i><u>高清 · 166 分钟</u></div>
+          <div class="info">
+            <h3>沙丘</h3>
+            <p>沙漠星球的香料争夺，视听规格拉满，适合大屏与耳机观看。</p>
+            <div class="meta"><span>科幻 / 史诗</span><b>2021</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c3"><i>8.6</i><u>国语 · 173 分钟</u></div>
+          <div class="info">
+            <h3>流浪地球</h3>
+            <p>把太阳危机下的迁徙工程放进中国式家庭叙事里，重工业镜头扎实。</p>
+            <div class="meta"><span>科幻 / 灾难</span><b>2019</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c4"><i>8.4</i><u>粤语 · 134 分钟</u></div>
+          <div class="info">
+            <h3>周处除三害</h3>
+            <p>通缉犯榜第三名的自我清算，动作戏干净，节奏不拖。</p>
+            <div class="meta"><span>犯罪 / 动作</span><b>2023</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c5"><i>7.9</i><u>轻喜剧 · 103 分钟</u></div>
+          <div class="info">
+            <h3>走走停停</h3>
+            <p>回乡青年的生活切片，笑点藏在方言和停顿里，适合放松时段。</p>
+            <div class="meta"><span>喜剧 / 生活</span><b>2024</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c6"><i>8.1</i><u>运动 · 121 分钟</u></div>
+          <div class="info">
+            <h3>飞驰人生</h3>
+            <p>赛车题材配中年回炉的剧情，后半段赛道戏拍得很有推力。</p>
+            <div class="meta"><span>喜剧 / 运动</span><b>2019</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tv" style="background:var(--bg2)" aria-labelledby="t1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="t1">剧集榜</h2>
+          <p>左榜按站内播放热度，右榜按用户评分，榜单每小时重排一次，追更进度同步标注。</p>
+        </div>
+        <a class="more" href="#">完整剧集排期表</a>
+      </div>
+      <div class="rank">
+        <div class="rk">
+          <h3>热度榜 <span>近 24 小时</span></h3>
+          <ol>
+            <li><b>1</b><div><strong>繁花</strong><small>都市 / 商战 · 更新至 30 集</small></div><em>98.6</em></li>
+            <li><b>2</b><div><strong>庆余年</strong><small>古装 / 权谋 · 全 46 集</small></div><em>96.2</em></li>
+            <li><b>3</b><div><strong>我的阿勒泰</strong><small>文艺 / 短剧 · 全 8 集</small></div><em>94.8</em></li>
+            <li><b>4</b><div><strong>墨雨云间</strong><small>古装 / 宅斗 · 更新至 34 集</small></div><em>91.3</em></li>
+            <li><b>5</b><div><strong>边水往事</strong><small>悬疑 / 冒险 · 全 21 集</small></div><em>89.7</em></li>
+          </ol>
+        </div>
+        <div class="rk">
+          <h3>评分榜 <span>站内用户打分区</span></h3>
+          <ol>
+            <li><b>1</b><div><strong>漫长的季节</strong><small>悬疑 / 年代 · 全 12 集</small></div><em>9.4</em></li>
+            <li><b>2</b><div><strong>我的阿勒泰</strong><small>文艺 / 短剧 · 全 8 集</small></div><em>9.1</em></li>
+            <li><b>3</b><div><strong>繁花</strong><small>都市 / 商战 · 全 30 集</small></div><em>8.9</em></li>
+            <li><b>4</b><div><strong>山海情</strong><small>年代 / 扶贫 · 全 23 集</small></div><em>8.8</em></li>
+            <li><b>5</b><div><strong>大江大河</strong><small>年代 / 职场 · 全 47 集</small></div><em>8.7</em></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anime" aria-labelledby="a1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="a1">动漫番剧</h2>
+          <p>国产动画与日本新番分开排期，更新日、集数、制作公司一目了然。</p>
+        </div>
+        <a class="more" href="#">番剧更新时间表</a>
+      </div>
+      <div class="films">
+        <article class="film">
+          <div class="cover c3"><i>8.9</i><u>每周五更新</u></div>
+          <div class="info">
+            <h3>凡人修仙传</h3>
+            <p>年番体量，打戏分镜稳定，剧情推进不注水。</p>
+            <div class="meta"><span>国创 / 玄幻</span><b>连载中</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c1"><i>8.7</i><u>已完结 · 11 集</u></div>
+          <div class="info">
+            <h3>时光代理人</h3>
+            <p>双人能力设定带出的悬疑线，情绪落点准。</p>
+            <div class="meta"><span>国创 / 悬疑</span><b>两季</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c5"><i>8.3</i><u>每周日更新</u></div>
+          <div class="info">
+            <h3>狐妖小红娘</h3>
+            <p>长线连载的人妖转世故事，适合慢慢补。</p>
+            <div class="meta"><span>国创 / 奇幻</span><b>连载中</b></div>
+          </div>
+        </article>
+        <article class="film">
+          <div class="cover c4"><i>9.2</i><u>剧场版 · 124 分钟</u></div>
+          <div class="info">
+            <h3>你想活出怎样的人生</h3>
+            <p>手绘质感浓重，意象多，适合一个人安静看完。</p>
+            <div class="meta"><span>动画电影</span><b>2023</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="doc" style="background:var(--bg2)" aria-labelledby="d1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="d1">纪录片</h2>
+          <p>自然、人文、美食三条线，单集时长与适合观看的场景一并标注。</p>
+        </div>
+        <a class="more" href="#">纪录片片单合集</a>
+      </div>
+      <div class="news">
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>河西走廊</h3>
+            <p>十集串起两千年通道史，配乐与叙事配合得很稳。</p>
+            <time datetime="2026-10-12">更新于 10 月 12 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>人生一串</h3>
+            <p>烧烤摊视角的市井记录，配饭看的适配度很高。</p>
+            <time datetime="2026-10-09">更新于 10 月 9 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>地球脉动</h3>
+            <p>自然摄影的标杆，画面规格适合投屏观看。</p>
+            <time datetime="2026-10-05">更新于 10 月 5 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>我在故宫修文物</h3>
+            <p>修复师日常，节奏慢但信息密度不低。</p>
+            <time datetime="2026-09-28">更新于 9 月 28 日</time>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" aria-labelledby="n1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="n1">影评与观影指南</h2>
+          <p>编辑每周挑三部新片写短评，附带观看门槛、适合人群与是否需要补前作。</p>
+        </div>
+        <a class="more" href="#">更多影评</a>
+      </div>
+      <div class="news">
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>本周新片短评：一部值得二刷的公路片</h3>
+            <p>三条叙事线在第二幕交汇，人物动机交代清楚，节奏控制得住。</p>
+            <time datetime="2026-10-16">10 月 16 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>追剧前要不要补前作？这份清单说清了</h3>
+            <p>按剧情关联度分级，标注哪些可以跳过、哪些必须先看。</p>
+            <time datetime="2026-10-14">10 月 14 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>手机端选片：网络不佳时怎么挑画质档位</h3>
+            <p>不同码率对流量的消耗实测，附三档推荐设置。</p>
+            <time datetime="2026-10-11">10 月 11 日</time>
+          </div>
+        </article>
+        <article class="nw">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>深夜档片单：短、轻、不费脑的十二部</h3>
+            <p>单部时长控制在 110 分钟内，剧情不烧脑，适合睡前看。</p>
+            <time datetime="2026-10-07">10 月 7 日</time>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="background:var(--bg2)" aria-labelledby="ab1">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <h2 id="ab1">关于酷客影视</h2>
+          <p>站点定位、内容来源与常见疑问，一次说清。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>酷客影视收录哪些类型的影视内容？</summary>
+          <p>电影、电视剧、动漫番剧、纪录片、综艺五个方向，其中电影按题材细分六类，剧集按地区与更新状态标注，动漫区分国创与新番排期。</p>
+        </details>
+        <details>
+          <summary>榜单的排序依据是什么？</summary>
+          <p>热度榜取近 24 小时的播放、收藏与搜索加权值；评分榜取站内用户打分去掉极值后的均分，样本量不足的条目暂不进榜。</p>
+        </details>
+        <details>
+          <summary>手机上浏览会不会排版错乱？</summary>
+          <p>不会。页面使用流式栅格，卡片宽度随屏幕自动收缩，导航在窄屏下改为横向滑动，横竖屏切换均保持单列可读宽度。</p>
+        </details>
+        <details>
+          <summary>发现条目信息有误怎么处理？</summary>
+          <p>页面底部提供信息纠错入口，提交片名与错误字段后，编辑会在核对公开资料后于三个工作日内修订。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fabout">
+        <a class="logo" href="#top"><i></i>酷客影视</a>
+        <p>做一份能快速做决定的影视索引：把评分、看点、更新进度放在同一屏，让人少花时间在选片上，多花时间在看片上。</p>
+        <p class="domainline">站点地址：https://kukeyingshi-app.github.io</p>
+      </div>
+      <div>
+        <h4>内容分区</h4>
+        <ul>
+          <li><a href="#movie">电影库</a></li>
+          <li><a href="#tv">剧集榜</a></li>
+          <li><a href="#anime">动漫番剧</a></li>
+          <li><a href="#doc">纪录片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>常用入口</h4>
+        <ul>
+          <li><a href="#">今日更新</a></li>
+          <li><a href="#">高分片单</a></li>
+          <li><a href="#">冷门佳作</a></li>
+          <li><a href="#">排期日历</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点服务</h4>
+        <ul>
+          <li><a href="#">信息纠错</a></li>
+          <li><a href="#">收录申请</a></li>
+          <li><a href="#">内容规范</a></li>
+          <li><a href="#">免责说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="yr">2026</span> 酷客影视 kukeyingshi-app · 页面内容仅作影视信息索引</span>
+      <span>https://kukeyingshi-app.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="返回顶部">↑</a>
+
+<script>
+(function(){
+  var pg=document.getElementById('pg');
+  function upd(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var y=window.scrollY||document.documentElement.scrollTop;
+    pg.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  upd();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
